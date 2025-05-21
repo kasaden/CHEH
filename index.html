@@ -7,7 +7,6 @@
     body {
       background-color: #f0f0f0;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -15,10 +14,42 @@
       font-family: Arial, sans-serif;
     }
 
-    h1 {
-      font-size: 48px;
-      margin-bottom: 40px;
-      color: #333;
+    .container {
+      display: grid;
+      grid-template-areas:
+        "top top top"
+        "left center right"
+        "bottom bottom bottom";
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto auto;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .top {
+      grid-area: top;
+      font-size: 30px;
+    }
+
+    .bottom {
+      grid-area: bottom;
+      font-size: 30px;
+    }
+
+    .left {
+      grid-area: left;
+      font-size: 30px;
+      align-self: center;
+    }
+
+    .right {
+      grid-area: right;
+      font-size: 30px;
+      align-self: center;
+    }
+
+    .center {
+      grid-area: center;
     }
 
     button {
@@ -40,11 +71,17 @@
 </head>
 <body>
 
-  <h1>↓ CLIQUE ↓</h1>
-
-  <button onclick="window.location.href='https://www.youtube.com/watch?v=9M2Ce50Hle8&ab_channel=TOM'">
-    CHEH
-  </button>
+  <div class="container">
+    <div class="top">↓ CLIQUE ↓</div>
+    <div class="left">CLIQUE →</div>
+    <div class="center">
+      <button onclick="window.location.href='https://www.youtube.com/watch?v=9M2Ce50Hle8&ab_channel=TOM'">
+        CHEH
+      </button>
+    </div>
+    <div class="right">← CLIQUE</div>
+    <div class="bottom">↑ CLIQUE ↑</div>
+  </div>
 
 </body>
 </html>
